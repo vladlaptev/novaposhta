@@ -23,8 +23,8 @@ module Novaposhta
     end
 
     # отделения и типы компании
-    def self.get_warehouses
-      body_of_query = make_body('Address', 'getWarehouses', {})
+    def self.get_warehouses(city_name)
+      body_of_query = make_body('Address', 'getWarehouses', {'CityName' => city_name})
       post_request(body_of_query)
     end
 
